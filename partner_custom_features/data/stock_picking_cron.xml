@@ -1,0 +1,16 @@
+<odoo>
+    <data noupdate="1">
+        <!-- point 3 - Copy all the tags from sale order to Delivery orders created from sale order. (for existing records) -->
+        <record id="ir_cron_copy_tags_to_picking" model="ir.cron">
+            <field name="name">Copy Sale Order Tags to Delivery</field>
+            <field name="model_id" ref="stock.model_stock_picking"/>
+            <field name="state">code</field>
+            <field name="code">model.cron_copy_sale_order_tags()</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="active">False</field>
+        </record>
+    </data>
+</odoo>

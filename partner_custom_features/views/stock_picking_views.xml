@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- point 4 - Searching on the tags in deliver order should be possible. -->
+    <record id="view_picking_search_inherit_tags" model="ir.ui.view">
+        <field name="name">stock.picking.search.tag</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+        <field name="arch" type="xml">
+            <field name="origin" position="after">
+                <field name="tag_ids"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Point 5: Form View - tag_ids visible only if has value -->
+    <record id="view_picking_form_inherit" model="ir.ui.view">
+        <field name="name">stock.picking.form.inherit.tag</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='origin']" position="after">
+                <field name="tag_ids" invisible="not tag_ids" widget="many2many_tags"/>
+                <!-- Point 10 - Add New widget for char field to copy the content into clipboard. -->
+                <field name="copy_text" widget="copy_clipboard"/> 
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Point 5: List View - tag_ids optional -->
+    <record id="view_picking_tree_inherit" model="ir.ui.view">
+        <field name="name">stock.picking.tree.inherit.tag</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.vpicktree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="inside">
+                <field name="tag_ids" optional="show" widget="many2many_tags"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

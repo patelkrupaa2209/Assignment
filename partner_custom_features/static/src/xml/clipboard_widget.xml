@@ -1,0 +1,21 @@
+<templates xml:space="preserve">
+  <t t-name="partner_custom_features.CopyClipboard" owl="1">
+    <div class="o_input_with_button d-flex align-items-center">
+      <input
+        t-ref="input"
+        type="text"
+        class="o_input"
+        t-model="props.value"
+        t-att-readonly="props.readonly"
+      />
+      <button
+        type="button"
+        class="btn btn-outline-secondary btn-sm ms-2"
+        t-on-click="copyText"
+        title="Copy to clipboard"
+      >
+        📋
+      </button>
+    </div>
+  </t>
+</templates>
