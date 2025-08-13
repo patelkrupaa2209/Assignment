@@ -10,13 +10,3 @@ class SaleOrder(models.Model):
             for picking in order.picking_ids:
                 picking.tag_ids = order.tag_ids
         return res
-
-
-# class SaleOrderLine(models.Model):
-#     _inherit = 'sale.order.line'
-
-#     def _prepare_procurement_values(self, group_id=False):
-#         values = super()._prepare_procurement_values(group_id=group_id)
-#         if self.product_id.categ_id:
-#             values['category_id'] = self.product_id.categ_id.id
-#         return values

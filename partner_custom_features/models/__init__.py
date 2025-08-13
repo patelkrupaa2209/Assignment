@@ -1,7 +1,5 @@
-from . import res_partner
-from . import stock_picking
-from . import sale_order
-from . import mrp_production
-# from . import inherit_stock_rule
-from . import inherit_purchase_order
+from . import inherit_res_partner
+from . import inherit_stock_picking
+from . import inherit_sale_order
+from . import inherit_mrp_production
 from . import inherit_product_category

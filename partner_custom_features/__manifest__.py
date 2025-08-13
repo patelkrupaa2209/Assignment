@@ -5,14 +5,15 @@
     'summary': 'Custom enhancements for partner and sale/delivery operations',
     'description': 'Module developed by Krupa as per assignment specification.',
     'author': 'Krupa',
+    'license': 'LGPL-3',
     'category': 'Custom',
     'depends': ['base', 'sale_management', 'stock', 'mrp', 'purchase', 'purchase_stock'],
     'data': [
         'data/mail_template.xml',
         'data/automated_action.xml',
         'data/stock_picking_cron.xml',
-        'views/stock_picking_views.xml',
-        'views/sale_order_search_view.xml',
+        'views/inherit_stock_picking_view.xml',
+        'views/inherit_sale_order_view.xml',
     ],
     'assets': {
         'web.assets_backend': [
